@@ -66,7 +66,7 @@ const generator = (plop: Plop) => {
     plop.setHelper("upperCase", upperCase);
     plop.setHelper("lowerCase", lowerCase);
 
-    plop.setGenerator("component", {
+    plop.setGenerator("React component", {
         actions: [
             {
                 abortOnFail: true,
@@ -127,7 +127,7 @@ const generator = (plop: Plop) => {
             },
         ],
     });
-    plop.setGenerator("store", {
+    plop.setGenerator("Redux store", {
         actions: [
             {
                 abortOnFail: true,
@@ -159,6 +159,9 @@ const generator = (plop: Plop) => {
                 templateFile: "templates/Store/Store.service.ts.hbs",
                 type: "add",
             },
+            /**
+             * @todo Should move these types somewhere else
+             */
             {
                 abortOnFail: true,
                 path: `${storePath}/{{capitalize serviceName}}/{{capitalize serviceName}}.types.ts`,
